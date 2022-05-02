@@ -1,0 +1,152 @@
+/* -------------- Section 1 - Defaults ------------ */
+/* --------------- Section 2 - Generic styles -------------- */
+p, li {
+  font-family: Nunito;
+  color: #2F3C4F;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* --------------- Section 3 - Specific Styles -------------- */
+.page-container {
+  background: #ffffff;
+}
+
+/* FIRST CONTAINER */
+.first-panel {
+  background: #2F3C4F;
+  min-height: 100vh;
+}
+
+.profile-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin-top: 15%;
+}
+
+.title-name {
+  font-family: Nunito;
+  color: #ffffff;
+  font-size: 38px;
+  text-align: center;
+}
+
+.subtitle-name {
+  font-family: Nunito;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Socials bar icons */
+.socials-bar {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.socials-bar li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+.socials-bar li a {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  color: #6EB2CD;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.socials-bar li a i {
+  font-size: 30px;
+}
+
+/* SECOND CONTAINER */
+.second-panel {
+  height: 100%;
+  background: #ffffff;
+}
+
+.panel-title-main {
+  font-family: Nunito;
+  color: #2F3C4F;
+  font-size: 35px;
+  text-align: center;
+}
+
+.panel-title-second {
+  font-family: Nunito;
+  color: #ffffff;
+  font-size: 35px;
+  text-align: center;
+}
+
+.details {
+  padding-top: 5%;
+  padding-left: 20%;
+  text-align: left;
+  font-size: 18px;
+}
+
+.about-me {
+  padding: 10%;
+  text-align: center;
+}
+
+/* THIRD CONTAINER - PROJECTS */
+.third-panel {
+  background: #2F3C4F;
+}
+
+.project-container {
+  position: relative;
+  padding: 5%;
+}
+
+.project-container:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+}
+
+.project-desc {
+  color: white;
+  font-size: 1vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+/* FOURTH CONTAINER */
+.fourth-panel {
+  height: 100%;
+  background: #ffffff;
+}

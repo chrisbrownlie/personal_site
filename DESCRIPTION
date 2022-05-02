@@ -1,0 +1,17 @@
+Package: chrisbrownlie
+Type: Package
+Title: Shiny App for chrisbrownlie.com
+Version: 0.0.2
+Authors@R:
+  c(
+  person("Chris", "Brownlie", email = "christopher.brownlie@education.gov.uk", role = c("aut", "cre"))
+  )
+Description: Package containing an R Shiny app which is used as my personal website
+License: MIT + file LICENSE
+Encoding: UTF-8
+RoxygenNote: 7.1.2
+Imports:
+  shiny,
+  shinyjs,
+  imola,
+  shinyMobile
