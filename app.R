@@ -1,1 +1,2 @@
-chrisbrownlie::run_app() # add parameters here (if any)
+pkgload::load_all()
+chrisbrownlie::run_app()
