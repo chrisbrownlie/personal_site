@@ -332,3 +332,8 @@ tl-item.active .tl-dot:before {
 .fifth-panel {
   background: #2F3C4F;
 }
+
+/* FOOTER */
+.footer-panel {
+  background: #6EB2CD;
+}

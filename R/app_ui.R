@@ -197,8 +197,21 @@ app_ui <- function() {
           )
         )
         
-      )
+      ), # end Experience section flexPanel
+
+      # TODO: Add Medium/blog post section
+      # TODO: Add skills/knowledge section
+      # Both of the above may come before experience? or the blog post section at least should probably/maybe go after projects
       
+      # TODO: add footer/contact details
+      
+      imola::flexPanel(
+        class = "page-container footer-panel",
+        basis = c("150px", "500px"),
+        p("Chris Brownlie, 2022"),
+        p("Images either created independently or from", tags$a("Unsplash", href = "https://unsplash.com"), "or", tags$a("Pixabay", href = "https://pixabay.com"))
+      )
+            
     ) # end main flexPanel
     
   ) # end bootstrapPage

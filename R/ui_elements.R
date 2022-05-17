@@ -94,8 +94,8 @@ timeline <- function(title, stuff) {
                             tags$div(
                               class = "tl-content",
                               h4(element[["title"]]),
-                              p(style = "text-align:left", element[["info"]]),
-                              tags$div(class = "tl-date text-muted mt-1", element[["date"]])
+                              tags$div(class = "tl-date text-muted mt-1", element[["date"]]),
+                              p(style = "text-align:left", element[["info"]])
                             )
                           )
                         })
