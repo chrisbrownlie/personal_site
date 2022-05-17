@@ -90,8 +90,9 @@ app_ui <- function() {
           section for links to some of them.
           "),
           h3("About this app", class = "panel-title-main"),
-          p("This shiny app was developed using the", tags$a("imola", href = "https://github.com/pedrocoutinhosilva/imola"), "R package.
-            The code used to generate this site is available", tags$a("here", href = "https://github.com/chrisbrownlie/personalSite"))
+          p(class = "about-me",
+            "The code used to generate this shiny app is available", tags$a("here.", href = "https://github.com/chrisbrownlie/personalSite"),
+            "The responsive UI was developed with the help of the", tags$a("imola", href = "https://github.com/pedrocoutinhosilva/imola"), "package, among others.")
         )
         
       ),
@@ -129,10 +130,11 @@ app_ui <- function() {
         ),
         
         project_card(
-          link = "https://github.com/chrisbrownlie/myFacebook",
-          img = "img/my_facebook.jpg",
-          name = "myFacebook",
-          desc = "R package for extracting and analysing your Facebook data."
+          link = "https://medium.com/data-slice",
+          img = "img/dataslice.png",
+          name = "Data Slice",
+          desc = "Online publication for analytical and Data Science-based original
+          articles"
         ),
         
         project_card(
@@ -146,17 +148,54 @@ app_ui <- function() {
           link = "https://shiny.chrisbrownlie.com",
           img = "img/shiny_servers.jpg",
           name = "Shiny servers",
-          desc = "Shiny server and shinyProxy server, both attached to this domain.
-          You are currently on the former, click here to view the latter."
+          desc = "Shiny server and shinyProxy server, both hosted in the cloud
+          and attached to this domain. You are currently viewing the former, 
+          click here to view the latter."
         )
         
       ), # end Projects section flexPanel
       
       # Experience section
       imola::flexPanel(
-        class = "page-container fourth-panel"
+        class = "page-container fourth-panel",
         
+        direction = "column",
         
+        timeline(
+          title = "Experience",
+          stuff = list(
+            list(title = "Senior Data Scientist",
+                 info = "Working in the Education & Skills Funding Agency. Specialising in R and R Shiny, developing complex code-based funding models and forecasting methods. Developed expertise in RStudio Connect.",
+                 date = "Department for Education (2021 - present)"),
+            list(title = "Data Scientist",
+                 info = "Working in the Education & Skills Funding Agency, as part of the Analysis & Modelling team. Developed expertise in R Shiny, text analysis and financial forecasting.",
+                 date = "Department for Education (2019 - 2021)"),
+            list(title = "Writer & Editor",
+                 info = "Writing blogs about data science projects, for various online publications such as Towards Data Science, Level Up Coding, Noteworthy and The Startup. Created my own publication to host my articles - Data Slice - which currently has over 600 followers.",
+                 date = "Data Slice (2020 - present)"),
+            list(title = "Junior Data Scientist",
+                 info = "Working in the Academies team, providing financial forecasting for £18bn worth of funding. Developed expertise in R, PowerBI and PowerQuery.",
+                 date = "Department for Education (2018 - 2019)"),
+            list(title = "Junior Data Engineer",
+                 info = "Working in the Data Engineering team, managing and manipulating a large Data Warehouse. Developed expertise in SQL, database management and data warehousing.",
+                 date = "Department for Education (2017 - 2018)")
+          )
+        ),
+        
+        timeline(
+          title = "Education",
+          stuff = list(
+            list(title = "MSc Data Science",
+                 info = "Securing sponsorship from my employer, studying part time for two years alongside full-time work. Developed knowledge of Big Data techniques, data mining and statistical analysis. Dissertation focussing on Deep Learning, specifically biologically plausible neural networks without backpropagation of error. Graduated with Distinction.",
+                 date = "University of Sheffield (2019-2021)"),
+            list(title = "BSc Economics",
+                 info = "Studied Economics with a focus on mathematical economics and econometrics. Studied set theory and advanced algebra as well as development, international trade and behavioural economics. Campus Ambassador for the Economics and Financial Society. Member of the Mens Rugby Union Team.",
+                 date = "University of Nottingham (2014-2017)"),
+            list(title = "A Levels",
+                 info = "Studied Maths (A*), Further Maths (A) and Economics (A*). Deputy Head Boy and Clubs & Societies Prefect. Player of the Year, Rugby First XV.",
+                 date = "")
+          )
+        )
         
       )
       

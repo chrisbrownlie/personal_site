@@ -63,3 +63,45 @@ project_card <- function(link,
     )
   
 }
+
+
+#' Timeline
+#' 
+#' Create a timeline for work experience info
+#' 
+#' @param title the title of the timeline
+#' @param stuff list, each element has date, title and info
+#' 
+#' @return HTML code to provide a timeline of activities
+timeline <- function(title, stuff) {
+  tags$div(
+    class="timeline-content timeline-container",
+    id="timeline-content",
+    tags$div(
+      class = "padding",
+      tags$div(
+        class = "row",
+        tags$div(
+          class = "col-lg-12",
+          h3(title),
+          tags$div(
+            class = "timeline p-4 block mb-4",
+            purrr::imap(stuff,
+                        function(element,index){
+                          tags$div(
+                            class = "tl-item active",
+                            tags$div(class = "tl-dot b-primary"),
+                            tags$div(
+                              class = "tl-content",
+                              h4(element[["title"]]),
+                              p(style = "text-align:left", element[["info"]]),
+                              tags$div(class = "tl-date text-muted mt-1", element[["date"]])
+                            )
+                          )
+                        })
+          )
+        )
+      )
+    )
+  )
+}
