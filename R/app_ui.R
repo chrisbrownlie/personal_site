@@ -4,7 +4,6 @@
 #' @import shiny
 #' @import imola
 app_ui <- function() {
-  print("beginning ui")
   
   # Convert sass to CSS for use in app
   sass::sass(

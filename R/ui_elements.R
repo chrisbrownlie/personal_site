@@ -7,7 +7,7 @@
 #' 
 #' @return HTML for a socials bar on the main page of website
 socials_bar <- function(links) {
-  print("Creating socials bar")
+  
   shiny::tags$ul(
     class = "socials-bar",
     
@@ -41,7 +41,6 @@ project_card <- function(link,
                          desc,
                          img_alt = "") {
   
-  print("Creating project card")
   shiny::tags$div(
     class = "project-container",
     shiny::tags$a(
@@ -75,7 +74,7 @@ project_card <- function(link,
 #' 
 #' @return HTML code to provide a timeline of activities
 timeline <- function(title, stuff) {
-  print("Creating timeline")
+  
   tags$div(
     class="timeline-content timeline-container",
     id="timeline-content",
@@ -122,7 +121,6 @@ timeline <- function(title, stuff) {
 embed_medium_feed <- function(publication = "data-slice",
                               tag = "") {
   
-  print("Creating medium feeed")
   # Query link
   if (tag != "") {
     api_url <- paste0("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F", publication, "%2Ftagged%2F", tag)
