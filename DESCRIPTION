@@ -9,8 +9,8 @@ Authors@R:
 Description: Package containing an R Shiny app which is used as my personal website
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.1.2
-Imports:
+RoxygenNote: 7.2.0
+Depends:
     shiny,
     imola,
     pkgload,
