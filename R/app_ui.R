@@ -66,7 +66,7 @@ app_ui <- function() {
         align_items = "flex-start",
         wrap = "wrap",
         basis = c("45%", "45%"),
-        gap = "20px",
+        gap = "10%",
         
         tags$div(
           h3("Details", class = "panel-title-main"),
@@ -289,15 +289,16 @@ app_ui <- function() {
       # Writing section
       imola::flexPanel(
         class = "page-container fifth-panel",
-        basis = "60%",
+        basis = "80%",
         grow = 0,
         wrap = "wrap",
         justify_content = "center",
         
         h3("Writing", class = "panel-title-second"),
-        h6("Below you can see some of my recent blog posts, published in my online publication", tags$i("Data Slice."),
+        h6(class = "panel-paragraph-second", "Below you can see some of my recent blog posts, published in my online publication", tags$i("Data Slice."),
           "With all my articles, I try to keep them as original as possible and only post when I think I can discuss something
           genuinely interesting and unique."),
+        h6(class = "panel-paragraph-second", tags$b("Please Note:"), "the carousel below may not display correctly on mobile devices."),
         embed_medium_feed(publication = "data-slice",
                           tag = "")
       ),
