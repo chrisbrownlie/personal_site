@@ -4,28 +4,6 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-# Set some variables for the info badges
-status <- "development-orange"
-pkg_version <- paste(pkgload::pkg_version(), collapse = ".")
+# chrisbrownlie
 
-# Get badges based on variables (converted to png because Azure Devops doesn't render SVG)
-download.file(url = paste0("https://img.shields.io/badge/version-", pkg_version, "-blue.svg"),
-              destfile = "inst/static/pkg-version-badge.svg")
-rsvg::rsvg_png(svg = "inst/static/pkg-version-badge.svg",
-               file = "inst/static/pkg-version-badge.png")
-
-download.file(url = paste0("https://img.shields.io/badge/status-", status, ".svg"),
-              destfile = "inst/static/app-status-badge.svg")
-rsvg::rsvg_png(svg = "inst/static/app-status-badge.svg",
-               file = "inst/static/app-status-badge.png")
-```
-
-# advancedShiny
-
-<!-- badges: start -->
-![version: num](inst/static/pkg-version-badge.png)
-![status: status](inst/static/app-status-badge.png)
-<!-- badges: end -->
-
-This R package contains the shiny app used for my personal website, https://chrisbrownlie.com
+This R package contains the shiny app used for my personal website, https://chrisbrownlie.com.
