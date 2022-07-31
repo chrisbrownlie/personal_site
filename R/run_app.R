@@ -13,8 +13,17 @@
 #' @export
 run_app <- function() {
 
-  runApp(appDir = system.file("app",
+  if (interactive()) {
+    
+    runApp(appDir = system.file("app",
                                 package = "chrisbrownlie"))
+    
+  } else {
+    
+    shinyAppDir(appDir = system.file("app",
+                                     package = "chrisbrownlie"))
+    
+  }
 
 }
 

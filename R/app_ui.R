@@ -5,8 +5,15 @@
 #' @import imola
 app_ui <- function() {
   print("beginning ui")
+  
+  # Convert sass to CSS for use in app
+  sass::sass(
+    sass::sass_file(system.file("app/www/styling.scss", package = "chrisbrownlie")),
+    output = system.file("app/www/styling.css", package = "chrisbrownlie")
+  )
+  
   # Define site ui
-  ui <- shiny::bootstrapPage(
+  shiny::bootstrapPage(
     title = "Chris Brownlie",
     theme = bslib::bs_theme(version = 5),
     
@@ -308,6 +315,4 @@ app_ui <- function() {
     ) # end main flexPanel
     
   ) # end bootstrapPage
-  print("Returning final ui")
-  ui
 }
