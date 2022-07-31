@@ -4,15 +4,9 @@
 #' @import shiny
 #' @import imola
 app_ui <- function() {
-  
-  # Convert the Sass styling sheet to CSS so it can be called in dashboardBody below
-  sass::sass(
-    sass::sass_file(system.file("app/www/styling.scss", package = "chrisbrownlie")),
-    output = system.file("app/www/styling.css", package = "chrisbrownlie")
-  )
-  
+  print("beginning ui")
   # Define site ui
-  shiny::bootstrapPage(
+  ui <- shiny::bootstrapPage(
     title = "Chris Brownlie",
     theme = bslib::bs_theme(version = 5),
     
@@ -314,5 +308,6 @@ app_ui <- function() {
     ) # end main flexPanel
     
   ) # end bootstrapPage
-  
+  print("Returning final ui")
+  ui
 }
