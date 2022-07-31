@@ -8,11 +8,27 @@ $font-colour: #2F3C4F;
 $font-family: Nunito;
 
 /* --------------- Section 2 - Generic styles -------------- */
-p, li {
+p {
   font-family: $font-family;
   color: $font-colour;
   font-size: $font-size;
   text-align: center;
+}
+h6 {
+  font-family: $font-family;
+  color: $font-colour;
+  font-size: $font-size;
+}
+li {
+  font-family: $font-family;
+  color: $font-colour;
+  font-size: $font-size;
+}
+.checkmark {
+  list-style: none;
+}
+.checkmark::before {
+  content: '✓';
 }
 
 /* --------------- Section 3 - Specific Styles -------------- */
@@ -98,8 +114,16 @@ p, li {
   font-size: 18px;
 }
 .about-me {
-  padding: 10%;
+  padding: 2%;
+  padding-left: 15%;
+  padding-right: 15%;
   text-align: center;
+}
+.expertise {
+  padding: 5%;
+}
+.other-experience {
+  padding: 5%;
 }
 
 
@@ -332,9 +356,21 @@ tl-item.active .tl-dot:before {
 
 /* FIFTH CONTAINER */
 .fifth-panel {
-  background: $second-bgcolour
+  background: $second-bgcolour;
+  padding-bottom: 5%;
 }
 
+.bg-desc {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 3%;
+}
+
+.carousel-item img {
+  width: auto;
+  height: 450px;
+  max-height: 450px;
+}
 
 /* FOOTER */
 .footer-panel {

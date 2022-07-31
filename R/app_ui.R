@@ -65,7 +65,7 @@ app_ui <- function() {
         justify_content = "center",
         align_items = "flex-start",
         wrap = "wrap",
-        basis = c("200px", "200px"),
+        basis = c("45%", "45%"),
         gap = "20px",
         
         tags$div(
@@ -81,18 +81,73 @@ app_ui <- function() {
           h3("Hello there!", class = "panel-title-main"),
           p(class = "about-me",
           "
-          Welcome to my personal site! This is a web app I've created using R Shiny that contains
-          everything you need to know about me, as well as links to some projects I'm working on.
-          ",
-          tags$br(),
-          "
-          This app is hosted on my personal shiny server where I keep all of my apps - see the Projects
-          section for links to some of them.
-          "),
-          h3("About this app", class = "panel-title-main"),
+          Welcome! My name is Chris and I'm a senior Data Scientist working in the UK. This
+          website is a shiny app I have developed to host information about me and the projects I am working on.
+          Please dont hesitate to get in touch via one of the social media links at the top or by", 
+          tags$a("emailing me directly.", href = "mailto:chris.brownlie@hotmail.co.uk")
+          ),
           p(class = "about-me",
-            "The code used to generate this shiny app is available", tags$a("here.", href = "https://github.com/chrisbrownlie/personalSite"),
-            "The responsive UI was developed with the help of the", tags$a("imola", href = "https://github.com/pedrocoutinhosilva/imola"), "package, among others.")
+          "
+          If you spot any issues or errors on this app, I would very much appreciate if you could", tags$a("raise a
+          Github issue here", href = "https://github.com/chrisbrownlie/personal_site/issues/new"), "to let me know!
+          "),
+          p(class = "about-me",
+          "
+          This app is itself hosted on my personal shiny server where I keep all of my apps - see the Projects
+          section for links to some of them.
+          ")
+          ),
+        
+        tags$div(
+          class = "expertise",
+          h3("Expertise", class = "panel-title-main"),
+          tags$ul(
+              tags$li(class = "checkmark",
+                      "R:",
+                      tags$ul(
+                        tags$li("Package development"),
+                        tags$li("Querying and creating APIs"),
+                        tags$li("Process automation & optimisation")
+                      )),
+              tags$li(class = "checkmark",
+                      "R shiny:",
+                      tags$ul(
+                        tags$li("Data management & collection apps"),
+                        tags$li("MI and reporting dashboards"),
+                        tags$li("Conversion of Excel spreadsheets to apps")
+                        )
+              ),
+              tags$li(class = "checkmark",
+                      "R Server management:", 
+                      tags$ul(
+                        tags$li("RStudio Connect"),
+                        tags$li("Shiny Server"), 
+                        tags$li("ShinyProxy")
+                      )
+              )
+            )
+          ),
+        
+        tags$div(
+          class = "other-experience",
+          h3("Other experience", class = "panel-title-main"),
+          tags$ul(
+              tags$li(class = "checkmark",
+                      "Python:", 
+                      tags$ul(
+                        tags$li("Data manipulation with pandas"),
+                        tags$li("ML & DL with sklearn and pytorch"),
+                        tags$li("Website development with django")
+                      )),
+              tags$li(class = "checkmark",
+                      "SQL Server: creating & managing databases, warehousing basics"),
+              tags$li(class = "checkmark",
+                      "Git & Github"),
+              tags$li(class = "checkmark",
+                      "Azure devops release/pipeline management"),
+              tags$li(class = "checkmark",
+                      "HTML/CSS, basics of Javascript & Julia")
+            )
         )
         
       ),
@@ -165,10 +220,41 @@ app_ui <- function() {
           title = "Experience",
           stuff = list(
             list(title = "Senior Data Scientist",
-                 info = "Working in the Education & Skills Funding Agency. Specialising in R and R Shiny, developing complex code-based funding models and forecasting methods. Developed expertise in RStudio Connect.",
+                 info = tags$span(h6("Working in the Education & Skills Funding Agency, specialising in R and R Shiny, developing complex code-based funding models and forecasting methods. Developed expertise in RStudio Connect."),
+                                  h6(tags$b("Financial reporting:"),
+                                     tags$ul(
+                                       tags$li("Identified an overly complex Excel spreadsheet being used to track expenditure within the Data Science division."),
+                                       tags$li("Developed an R shiny app and SQL Server database backend to replace."),
+                                       tags$li("Saved 2-3 days of work per month spent updating and allowed more advanced reporting/analytics.")
+                                     )),
+                                  h6(tags$b("Academies budget:"),
+                                     tags$ul(
+                                       tags$li("Forecasting expenditure on all academies in the country."),
+                                       tags$li("Developed an R package which contained all documentation and various models."),
+                                       tags$li("Saved a week or more of work each month and accurately forecasts ~£25bn of funding.")
+                                     )),
+                                  h6(tags$b("Counter Fraud:"),
+                                     tags$ul(
+                                       tags$li("Development of machine learning processes to identify fraud in the Apprenticeships sector."),
+                                       tags$li("Used both R (tidymodels) and Python (sklearn) to explore best methods for detection."),
+                                       tags$li("Production dashboard in use by investigations colleagues to identify potentially fraudulent activity.")
+                                     ))),
                  date = "Department for Education (2021 - present)"),
             list(title = "Data Scientist",
-                 info = "Working in the Education & Skills Funding Agency, as part of the Analysis & Modelling team. Developed expertise in R Shiny, text analysis and financial forecasting.",
+                 info = tags$span(h6("Working in the Education & Skills Funding Agency, as part of the Analysis & Modelling team. Developed expertise in R Shiny, text analysis and financial forecasting."),
+                                  h6(tags$b("Admin reporting:"),
+                                     tags$ul(
+                                       tags$li("Multiple Excel spreadsheets sent out across the agency to finance colleagues to fill in their forecasts for the year."),
+                                       tags$li("Developed an R shiny app and SQL Server database backend to replace and reduce room for errors."),
+                                       tags$li("Final app in use by ~30+ people for several days each month, reduced errors and improved the process.")
+                                     )),
+                                  h6(tags$b("dfeCRAN:"),
+                                     tags$ul(
+                                       tags$li("Developed internal R package repository to allow colleagues to share sensitive R packages."),
+                                       tags$li("Used by several R package developers in the department to share their work"),
+                                       tags$li("Additional shiny app to allow submission of packages and automated rmarkdown to notify via email when submissions were made.")
+                                     ))
+                                  ),
                  date = "Department for Education (2019 - 2021)"),
             list(title = "Writer & Editor",
                  info = "Writing blogs about data science projects, for various online publications such as Towards Data Science, Level Up Coding, Noteworthy and The Startup. Created my own publication to host my articles - Data Slice - which currently has over 600 followers.",
@@ -185,7 +271,7 @@ app_ui <- function() {
         timeline(
           title = "Education",
           stuff = list(
-            list(title = "MSc Data Science",
+            list(title = "MSc Data Science (Distinction)",
                  info = "Securing sponsorship from my employer, studying part time for two years alongside full-time work. Developed knowledge of Big Data techniques, data mining and statistical analysis. Dissertation focussing on Deep Learning, specifically biologically plausible neural networks without backpropagation of error. Graduated with Distinction.",
                  date = "University of Sheffield (2019-2021)"),
             list(title = "BSc Economics",
@@ -199,9 +285,22 @@ app_ui <- function() {
         
       ), # end Experience section flexPanel
 
-      # TODO: Add Medium/blog post section
-      # TODO: Add skills/knowledge section
-      # Both of the above may come before experience? or the blog post section at least should probably/maybe go after projects
+      
+      # Writing section
+      imola::flexPanel(
+        class = "page-container fifth-panel",
+        basis = "60%",
+        grow = 0,
+        wrap = "wrap",
+        justify_content = "center",
+        
+        h3("Writing", class = "panel-title-second"),
+        h6("Below you can see some of my recent blog posts, published in my online publication", tags$i("Data Slice."),
+          "With all my articles, I try to keep them as original as possible and only post when I think I can discuss something
+          genuinely interesting and unique."),
+        embed_medium_feed(publication = "data-slice",
+                          tag = "")
+      ),
       
       # TODO: add footer/contact details
       

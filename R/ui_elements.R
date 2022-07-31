@@ -105,3 +105,105 @@ timeline <- function(title, stuff) {
     )
   )
 }
+
+
+#' Embed medium blog post as bootstrap carousel
+#' 
+#' Embed medium publication blog post as a carousel of cards.
+#' Carousel code inspired by bootstrap example with captions in
+#' bootstrap documentation.
+#' 
+#' @param publication the name of the publication to embed
+#' @param tag the tag to filter for
+#' 
+#' @return an embedded medium feed
+embed_medium_feed <- function(publication = "data-slice",
+                              tag = "") {
+  
+  # Query link
+  if (tag != "") {
+    api_url <- paste0("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F", publication, "%2Ftagged%2F", tag)
+  } else {
+    api_url <- paste0("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F", publication)
+  }
+  
+  rss_feed <- httr2::request(api_url) |>
+    httr2::req_perform() |>
+    httr2::resp_body_json()
+  
+  div(id="carouselMediumPosts", 
+      class="carousel slide", 
+      `data-bs-ride` = "carousel",
+      div(class="carousel-indicators",
+          tagList(
+            lapply(seq_along(rss_feed$items),
+                   function(i) {
+                     if (i == 1) {
+                       tags$button(type="button",
+                                   `data-bs-target` = "#carouselMediumPosts",
+                                   `data-bs-slide-to` = as.character(i-1),
+                                   class = "active",
+                                   `aria-current` = "true",
+                                   `aria-label` = paste0("Slide ", i))
+                     } else {
+                       tags$button(type="button",
+                                   `data-bs-target` = "#carouselMediumPosts",
+                                   `data-bs-slide-to` = as.character(i-1),
+                                   `aria-label` = paste0("Slide ", i))
+                     }
+                 })
+        )
+    ),
+    div(class="carousel-inner",
+        tagList(
+          lapply(
+            seq_along(rss_feed$items),
+            function(i){
+              i_class <- ifelse(i == 1, 
+                                "carousel-item active", 
+                                "carousel-item")
+              description <- gsub(pattern = "<.*?>",
+                                  replacement = "",
+                                  rss_feed$items[[i]]$description) |>
+                gsub(pattern = "Continue reading on Data Slice.*$",
+                     replacement = "") |>
+                paste0(".")
+              new_title <- gsub(pattern = "&amp; ",
+                            replacement = "& ",
+                            rss_feed$items[[i]]$title)
+              final_desc <- tags$span(description, tags$br(), tags$a("Read more >", href = rss_feed$items[[i]]$link))
+              div(class = i_class,
+                  `data-bs-interval` = "10000000",
+                  tags$img(src = rss_feed$items[[i]]$thumbnail,
+                           class="d-block w-100 post-image",
+                           href = rss_feed$items[[i]]$link),
+                  div(class="carousel-caption d-none d-md-block bg-desc",
+                      h5(new_title),
+                      final_desc
+                  )
+              )
+            }
+          )
+        )
+    ),
+    tags$button(
+      class="carousel-control-prev",
+      type="button",
+      `data-bs-target` = "#carouselMediumPosts",
+      `data-bs-slide` = "prev",
+      tags$span(class="carousel-control-prev-icon",
+                `aria-hidden` = "true"),
+      tags$span(class="visually-hidden", "Previous")
+    ),
+    tags$button(
+      class="carousel-control-next",
+      type="button",
+      `data-bs-target` = "#carouselMediumPosts",
+      `data-bs-slide` = "next",
+      tags$span(class="carousel-control-next-icon",
+                `aria-hidden` = "true"),
+      tags$span(class="visually-hidden", "Next")
+    )
+  )
+  
+}
