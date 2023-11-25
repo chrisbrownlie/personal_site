@@ -45,7 +45,7 @@ app_ui <- function() {
         tags$img(src = "img/circular_profile.png", class = "profile-image"),
         tags$div(
           h1("Chris Brownlie", class = "title-name"),
-          h3("Senior Data Scientist - UK", class = "subtitle-name"),
+          h3("Senior Analytics Consultant - UK", class = "subtitle-name"),
           socials_bar(
             links = list(
               list(link = "https://www.twitter.com/datascience_cb", icon = "twitter"),
@@ -81,7 +81,7 @@ app_ui <- function() {
           h3("Hello there!", class = "panel-title-main"),
           p(class = "about-me",
           "
-          Welcome! My name is Chris and I'm a senior Data Scientist working in the UK. This
+          Welcome! My name is Chris and I'm a Senior Analytics Consultant working in the UK. This
           website is a shiny app I have developed to host information about me and the projects I am working on.
           Please dont hesitate to get in touch via one of the social media links at the top or by", 
           tags$a("emailing me directly.", href = "mailto:chris.brownlie@hotmail.co.uk")
@@ -120,9 +120,9 @@ app_ui <- function() {
               tags$li(class = "checkmark",
                       "R Server management:", 
                       tags$ul(
-                        tags$li("RStudio Connect"),
                         tags$li("Shiny Server"), 
-                        tags$li("ShinyProxy")
+                        tags$li("ShinyProxy"),
+                        tags$li("Azure")
                       )
               )
             )
@@ -219,6 +219,27 @@ app_ui <- function() {
         timeline(
           title = "Experience",
           stuff = list(
+            list(title = "Senior Consultant, Analytics",
+                 info = tags$span(h6("Senior leadership of the Management Decision Analytics (MDA) team, acting as technical expert in R and R shiny."),
+                                  h6(tags$b("Enterprise data-driven applications"),
+                                     tags$ul(
+                                       tags$li("Developing large, commercial web applications for a variety of customers."),
+                                       tags$li("Building knowledge of ShinyProxy, Docker and Azure cloud deployment processes."),
+                                       tags$li("Acting as technical expert across data-driven application projects, from development to deployment.")
+                                     )),
+                                  h6(tags$b("Mentoring"),
+                                     tags$ul(
+                                       tags$li("Helping to develop skills across the MDA team and wider firm."),
+                                       tags$li("Delivering training to colleagues in R and Shiny."),
+                                       tags$li("Spreading knowledge and information from the wider world of R and Shiny.")
+                                     )),
+                                  h6(tags$b("Technical leadership"),
+                                     tags$ul(
+                                       tags$li("Presenting as a technical expert at conferences such as Shiny in Production."),
+                                       tags$li("Point of call for technical questions and problems requiring quick resolution."),
+                                       tags$li("Developing processes and best practices for R and Shiny development across the firm.")
+                                     ))),
+                 date = "Barnett Waddingham (2022 - present)"),
             list(title = "Senior Data Scientist",
                  info = tags$span(h6("Working in the Education & Skills Funding Agency, specialising in R and R Shiny, developing complex code-based funding models and forecasting methods. Developed expertise in RStudio Connect."),
                                   h6(tags$b("Financial reporting:"),
@@ -239,7 +260,7 @@ app_ui <- function() {
                                        tags$li("Used both R (tidymodels) and Python (sklearn) to explore best methods for detection."),
                                        tags$li("Production dashboard in use by investigations colleagues to identify potentially fraudulent activity.")
                                      ))),
-                 date = "Department for Education (2021 - present)"),
+                 date = "Department for Education (2021 - 2022)"),
             list(title = "Data Scientist",
                  info = tags$span(h6("Working in the Education & Skills Funding Agency, as part of the Analysis & Modelling team. Developed expertise in R Shiny, text analysis and financial forecasting."),
                                   h6(tags$b("Admin reporting:"),
@@ -308,7 +329,7 @@ app_ui <- function() {
       imola::flexPanel(
         class = "page-container footer-panel",
         basis = c("150px", "500px"),
-        p("Chris Brownlie, 2022"),
+        p("Chris Brownlie, 2024"),
         p("Images either created independently or from", tags$a("Unsplash", href = "https://unsplash.com"), "or", tags$a("Pixabay", href = "https://pixabay.com"))
       )
             
